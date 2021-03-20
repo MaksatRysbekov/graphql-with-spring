@@ -1,7 +1,9 @@
 spring:
   application:
     name: graphql-with-spring
-
 server:
   http2:
     enabled: true
+graphql:
+  servlet:
+    maxQueryDepth: 5

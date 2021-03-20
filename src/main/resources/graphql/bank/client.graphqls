@@ -2,5 +2,5 @@ type Client {
     id: ID!
     firstName: String!
     lastName: String!
-    
+    client: Client!
 }

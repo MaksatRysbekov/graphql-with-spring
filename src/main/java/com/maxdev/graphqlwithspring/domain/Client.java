@@ -1,14 +1,17 @@
 package com.maxdev.graphqlwithspring.domain;
 
 import lombok.Builder;
-import lombok.Value;
+import lombok.Setter;
 
 import java.util.UUID;
 
-@Value
+@Setter
 @Builder
-public class BankAccount {
+public class Client {
+
     UUID id;
+    String firstName;
+    String lastName;
+    @Setter
     Client client;
-    Currency currency;
 }
