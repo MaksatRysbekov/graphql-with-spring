@@ -1,4 +1,4 @@
-package com.maxdev.graphqlwithspring.resolver;
+package com.maxdev.graphqlwithspring.resolver.bank.query;
 
 import com.maxdev.graphqlwithspring.domain.BankAccount;
 import com.maxdev.graphqlwithspring.domain.Client;
@@ -15,21 +15,9 @@ public class BankAccountResolver implements GraphQLQueryResolver {
     public BankAccount bankAccount(UUID id) {
         log.info("Retrieving bank account with id: {}", id);
 
-        var clientA = Client.builder()
-                .id(UUID.randomUUID())
-                .firstName("Dave")
-                .lastName("Someguy1")
+        return BankAccount.builder()
+                .id(id)
+                .currency(Currency.EUR)
                 .build();
-
-        var clientB = Client.builder()
-                .id(UUID.randomUUID())
-                .firstName("Dave")
-                .lastName("Someguy2")
-                .build();
-
-        clientA.setClient(clientB);
-        clientB.setClient(clientA);
-
-        return BankAccount.builder().id(id).currency(Currency.EUR).client(clientA).build();
     }
 }
