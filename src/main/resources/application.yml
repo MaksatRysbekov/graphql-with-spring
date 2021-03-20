@@ -7,3 +7,4 @@ server:
 graphql:
   servlet:
     maxQueryDepth: 5
+    exception-handlers-enabled: true
